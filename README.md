@@ -11,8 +11,10 @@ def application(env, start_response):
           return [b"Hello World"] # python3
           #return ["Hello World"] # python2
 ```
-      uwsgi --http :8000 --wsgi-file test.py   如果端口被占用  就杀死该进程 或者使用 --http-socket
-      打开 127.0.0.1：8000 显示helloworld则安装成功
+```
+uwsgi --http :8000 --wsgi-file test.py
+```
+输入该命令，如果端口被占用  就杀死该进程 或者使用 --http-socket。 打开浏览器输入127.0.0.1：8000 显示helloworld则安装成功
       
       
       
