@@ -4,8 +4,7 @@
 
 ### 1、安装django python 等环境   能够用Python/python3 manage.py runserver 运行该项目
 ### 2、安装uwsgi   pip/pip3 install uwsgi
-     测试uwsgi是否安装成功
-     # test.py
+####测试uwsgi是否安装成功   test.py
 ''' python
 def application(env, start_response):
           start_response('200 OK', [('Content-Type','text/html')])
