@@ -6,10 +6,12 @@
 ### 2、安装uwsgi   pip/pip3 install uwsgi
      测试uwsgi是否安装成功
      # test.py
-      def application(env, start_response):
+''' python
+def application(env, start_response):
           start_response('200 OK', [('Content-Type','text/html')])
           return [b"Hello World"] # python3
           #return ["Hello World"] # python2
+'''
       uwsgi --http :8000 --wsgi-file test.py   如果端口被占用  就杀死该进程 或者使用 --http-socket
       打开 127.0.0.1：8000 显示helloworld则安装成功
       
