@@ -25,7 +25,18 @@ uwsgi --http :8000 --wsgi-file test.py
 #### threads 为 thread numbers startched in each worker process
 #### vaccum=true 为 退出的时候清空环境
 #### buffer-size 默认为4096    如果单独使用uwsgi的时候不需要这项  如果使用nginx作为反向代理的时候 可能因为文件过大报：1 rev（）...错时加上这句
-####
+```
+uwsgi --ini uwsgi.ini
+```
+输入该命令 打开浏览器输入127.0.0.1:9000,能够打开该项目，不过此时并没有静态文件 只有单纯的html  使用nginx做反向代理
+
+### 4.安装配置nginx
+#### 安装nginx命令   
+```
+sudo apt-get install nginx
+```
+
+
 
 
       
