@@ -15,7 +15,8 @@ def application(env, start_response):
 uwsgi --http :8000 --wsgi-file test.py
 ```
 输入该命令，如果端口被占用  就杀死该进程 或者使用 --http-socket。 打开浏览器输入127.0.0.1：8000 显示helloworld则安装成功
-      
+### 3、在项目下新建 uwsgi.ini文件 
+    其中 
       
       
       
