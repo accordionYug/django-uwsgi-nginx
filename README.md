@@ -35,6 +35,24 @@ uwsgi --ini uwsgi.ini
 ```
 sudo apt-get install nginx
 ```
+#### 配置nginx 
+常用的路径为  /etc/nginx/nginx.conf 或者 /etc/nginx/sites-enabled/default等  也可以通过自己建立 XXX.conf文件 用命令
+``` 
+sudo ln -s XXX.conf （ngin配置文件路径）
+```
+将配置文件挂载到配置文件上;  此次修改的时sites-enabled下面的 default文件：
+#### 配置的 ip 地址访问 不是域名
+#### listen 8000 端口 本身是80 害怕被占用改成8000;
+#### server name  为服务器 ip地址  如果是公司内网网段  可以在路由器的 虚拟服务器中  将web服务器的ip端口等映射出去 
+#### uwsgi_buffers和uwsgi_buffer_size 比较重要 如果配置完 运行nginx报502网关错误 查看log时有  上游头部文件过大时错误  就加上这个
+#### access_log和error_log为错误日志路径  出错了查看
+#### location /中 include 为 uwsgi_params路径  一般nginx会自带uwsgi_params 没有到github下载   uwsgi_pass为在uwsgi_ini中的socket端口地址，不能出错
+#### location /media 为项目 media路径    location /static 为项目 static路径
+#### 常用nginx命令
+```
+sudo service nginx start/stop/restart/reload
+```
+先用 uwsgi.ini启动项目 再开启nginx  通过server name的ip地址就可以访问项目了
 
 
 
